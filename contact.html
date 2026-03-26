@@ -192,14 +192,14 @@
             <img class="gallery-img" src="images/IMG_9127.JPG" alt="" loading="lazy" />
           </div>
 
-          <div class="gallery-item" data-gallery-type="video" data-gallery-src="images/IMG_8264.MOV">
-            <video class="gallery-img" src="images/IMG_8264.MOV" preload="metadata" muted playsinline></video>
+          <div class="gallery-item" data-gallery-type="vimeo" data-gallery-id="1177140803">
+            <img class="gallery-img" src="https://i.vimeocdn.com/video/2138394997-dec138c79d845d9251df9d819e3992d9030897def8effcac06cd146a0eeb72c8-d_1280?region=us" alt="" loading="lazy" />
             <div class="gallery-play-overlay">
               <div class="gallery-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
           </div>
-          <div class="gallery-item" data-gallery-type="video" data-gallery-src="images/IMG_8964.MOV">
-            <video class="gallery-img" src="images/IMG_8964.MOV" preload="metadata" muted playsinline></video>
+          <div class="gallery-item" data-gallery-type="vimeo" data-gallery-id="1177140839">
+            <img class="gallery-img" src="https://i.vimeocdn.com/video/2138395123-a50245f8c11d5a4d76dbdc7195c10f574c06a492cf289502b0e0ca946550af09-d_1280?region=us" alt="" loading="lazy" />
             <div class="gallery-play-overlay">
               <div class="gallery-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
@@ -238,8 +238,9 @@
           var src = item.dataset.gallerySrc;
           if (type === 'image') {
             gc.innerHTML = '<img src="' + src + '" alt="" />';
-          } else if (type === 'video') {
-            gc.innerHTML = '<div class="gallery-video-wrapper"><video src="' + src + '" controls autoplay playsinline></video></div>';
+          } else if (type === 'vimeo') {
+            var id = item.dataset.galleryId;
+            gc.innerHTML = '<div class="gallery-video-wrapper"><iframe src="https://player.vimeo.com/video/' + id + '?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>';
           }
           gd.showModal();
         });
